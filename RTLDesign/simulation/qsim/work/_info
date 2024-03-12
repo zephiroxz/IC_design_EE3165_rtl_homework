@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Zaphkiel\Desktop\RTL Design\simulation\qsim
+vRTLDesign
+Z1 IlVfL:zCBo4M1c;cES`mO?2
+Z2 VnIhJfC1^F=MPlUbJG1o1U1
+Z3 dD:\Documents\IC design\RTL Design\simulation\qsim
+Z4 w1710231369
+Z5 8RTLDesign.vo
+Z6 FRTLDesign.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|RTLDesign.vo|
+Z9 o-work work -O0
+Z10 n@r@t@l@design
+!i10b 1
+Z11 !s100 GDnC8k2g:XKP5X2b=D;SL3
+!s85 0
+Z12 !s108 1710231371.282000
+Z13 !s107 RTLDesign.vo|
+!s101 -O0
+vRTLDesign_vlg_check_tst
+!i10b 1
+Z14 !s100 [0d;b@:O:RnV`K06;b:621
+Z15 I<hfZ]_TFGSUfHkgjgRdF:0
+Z16 V_6[hJKTjk6YoaVknBJ[`Z2
+R3
+Z17 w1710231368
+Z18 8RTLDesign.vt
+Z19 FRTLDesign.vt
+L0 61
+R7
+r1
+!s85 0
+31
+Z20 !s108 1710231371.384000
+Z21 !s107 RTLDesign.vt|
+Z22 !s90 -work|work|RTLDesign.vt|
+!s101 -O0
+R9
+Z23 n@r@t@l@design_vlg_check_tst
+vRTLDesign_vlg_sample_tst
+!i10b 1
+Z24 !s100 e1Y7IjDc8E>2=JPLM<Mzd1
+Z25 IM=RXNH5Iee7^me865fSCW2
+Z26 Vc=3WoURBRb>fR9@6?f10k2
+R3
+R17
+R18
+R19
+L0 29
+R7
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R9
+Z27 n@r@t@l@design_vlg_sample_tst
+vRTLDesign_vlg_vec_tst
+!i10b 1
+Z28 !s100 ^1F9IzdF2SLa_kE=LT_G91
+Z29 IO<eWn2N9lH[UCVbcjciU;2
+Z30 V=?`7]]jVW47=SzUY7cT[B2
+R3
+R17
+R18
+R19
+Z31 L0 666
+R7
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R9
+Z32 n@r@t@l@design_vlg_vec_tst

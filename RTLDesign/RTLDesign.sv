@@ -1,0 +1,109 @@
+module RTLDesign(clk, nRST, addr, max, min, data, done);
+input clk, nRST, data;
+output max, min, addr, done;
+
+wire[7:0] max_temp, min_temp, value_temp, max, min;
+wire[7:0] data;
+wire[10:0] addr, addrp;
+wire add;
+wire lt_1024;
+wire max_update, max_ld;
+wire min_update, min_ld;
+wire count_inc;
+wire value_rd;
+wire max_rst, min_rst, count_rst, value_rst;
+
+assign add = 1'b1;
+assign lt_1024 = ~co;
+assign count_inc = lt_1024;
+assign value_rd = lt_1024;
+assign done = ~lt_1024;
+assign max_rst = nRST;
+assign min_rst = nRST;
+assign count_rst = nRST;
+assign value_rst = nRST;
+
+register_10 count_reg(clk, count_inc, count_rst, addrp, addr);
+adder adder(addr, add, addrp, co);
+register_8 value(clk,value_rd,value_rst,data,value_temp);
+register_8 max_temp_reg(clk,max_update,value_rst,value_temp,max_temp);
+register_8 min_temp_reg(clk,min_update,value_rst,value_temp,min_temp);
+register_8 max_reg(clk,co,max_rst,max_temp,max);
+register_8 min_reg(clk,co,min_rst,min_temp,min);
+comparator compmax(value_temp,max_temp,max_update,lt,eq);
+comparator compmin(value_temp,min_temp,gt,min_update,eq);
+
+endmodule: RTLDesign
+
+
+module adder(a,b,s,co);
+input wire[9:0] a,b;
+output wire [9:0] s;
+output wire co;
+wire[10:0] temp;
+assign temp = a + b;
+assign s = temp[9:0];
+assign co = temp[10];
+
+endmodule: adder
+
+
+module comparator(a,b,gt,lt,eq);
+input a,b;
+output reg gt,lt,eq;
+
+wire[7:0] a,b;
+
+always@(a,b)
+	begin
+		if(a>b) begin
+			gt = 1;
+			lt = 0;
+			eq = 0;
+		end
+		else if (a<b) begin
+			lt = 1;
+			gt = 0;
+			eq = 0;
+		end
+		else begin
+			eq = 1;
+			lt = 0;
+			gt = 0;
+		end
+	end
+endmodule: comparator
+
+
+module register_8(clk, load, reset, I, Q);
+input clk,load,reset,I;
+output Q;
+
+wire[7:0] I;
+reg[7:0] Q;
+always @(posedge clk or posedge reset)
+begin
+	if(reset)
+		Q <= 7'b0000000;
+	else if(load)
+		Q <= I;
+end
+
+endmodule: register_8
+
+
+module register_10(clk, load, reset, I, Q);
+input clk,load,reset,I;
+output Q;
+
+wire[9:0] I;
+reg[9:0] Q;
+always @(posedge clk or posedge reset)
+begin
+	if(reset)
+		Q <= 9'b000000000;
+	else if(load)
+		Q <= I;
+end
+
+endmodule: register_10

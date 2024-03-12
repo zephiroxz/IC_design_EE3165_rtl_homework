@@ -1,0 +1,257 @@
+Analysis & Elaboration report for RTLDesign
+Tue Mar 12 15:14:55 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "comparator:compmin"
+  6. Port Connectivity Checks: "comparator:compmax"
+  7. Port Connectivity Checks: "adder:adder"
+  8. Port Connectivity Checks: "register_10:count_reg"
+  9. Analysis & Elaboration Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                       ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Elaboration Status      ; Successful - Tue Mar 12 15:14:55 2024           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; RTLDesign                                       ;
+; Top-level Entity Name              ; RTLDesign                                       ;
+; Family                             ; Cyclone IV GX                                   ;
+; Total logic elements               ; N/A until Partition Merge                       ;
+;     Total combinational functions  ; N/A until Partition Merge                       ;
+;     Dedicated logic registers      ; N/A until Partition Merge                       ;
+; Total registers                    ; N/A until Partition Merge                       ;
+; Total pins                         ; N/A until Partition Merge                       ;
+; Total virtual pins                 ; N/A until Partition Merge                       ;
+; Total memory bits                  ; N/A until Partition Merge                       ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
+; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                       ;
+; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                       ;
+; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                       ;
+; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                       ;
+; Total PLLs                         ; N/A until Partition Merge                       ;
++------------------------------------+-------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; RTLDesign          ; RTLDesign          ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparator:compmin"                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; gt   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparator:compmax"                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; lt   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; eq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adder:adder"                                                                                                                                                                       ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; a    ; Input  ; Warning  ; Input port expression (11 bits) is wider than the input port (10 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; b    ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "b[9..1]" will be connected to GND.                                         ;
+; b    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; s    ; Output ; Warning  ; Output or bidir port (10 bits) is smaller than the port expression (11 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND.            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register_10:count_reg"                                                                                                                                                             ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; I    ; Input  ; Warning  ; Input port expression (11 bits) is wider than the input port (10 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Q    ; Output ; Warning  ; Output or bidir port (10 bits) is smaller than the port expression (11 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND.            ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Elaboration
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Mar 12 15:14:54 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RTLDesign -c RTLDesign --analysis_and_elaboration
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (12019): Can't analyze file -- file RTLDesign.v is missing
+Info (12021): Found 5 design units, including 5 entities, in source file rtldesign.sv
+    Info (12023): Found entity 1: RTLDesign
+    Info (12023): Found entity 2: adder
+    Info (12023): Found entity 3: comparator
+    Info (12023): Found entity 4: register_8
+    Info (12023): Found entity 5: register_10
+Warning (10236): Verilog HDL Implicit Net warning at RTLDesign.sv(27): created implicit net for "co"
+Warning (10236): Verilog HDL Implicit Net warning at RTLDesign.sv(33): created implicit net for "lt"
+Warning (10236): Verilog HDL Implicit Net warning at RTLDesign.sv(33): created implicit net for "eq"
+Warning (10236): Verilog HDL Implicit Net warning at RTLDesign.sv(34): created implicit net for "gt"
+Warning (10227): Verilog HDL Port Declaration warning at RTLDesign.sv(7): data type declaration for "addr" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at RTLDesign.sv(3): see declaration for object "addr"
+Warning (10227): Verilog HDL Port Declaration warning at RTLDesign.sv(5): data type declaration for "max" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at RTLDesign.sv(3): see declaration for object "max"
+Warning (10227): Verilog HDL Port Declaration warning at RTLDesign.sv(5): data type declaration for "min" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at RTLDesign.sv(3): see declaration for object "min"
+Warning (10227): Verilog HDL Port Declaration warning at RTLDesign.sv(6): data type declaration for "data" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at RTLDesign.sv(2): see declaration for object "data"
+Warning (10227): Verilog HDL Port Declaration warning at RTLDesign.sv(99): data type declaration for "I" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at RTLDesign.sv(96): see declaration for object "I"
+Warning (10227): Verilog HDL Port Declaration warning at RTLDesign.sv(100): data type declaration for "Q" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at RTLDesign.sv(97): see declaration for object "Q"
+Warning (10227): Verilog HDL Port Declaration warning at RTLDesign.sv(82): data type declaration for "I" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at RTLDesign.sv(79): see declaration for object "I"
+Warning (10227): Verilog HDL Port Declaration warning at RTLDesign.sv(83): data type declaration for "Q" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at RTLDesign.sv(80): see declaration for object "Q"
+Warning (10227): Verilog HDL Port Declaration warning at RTLDesign.sv(55): data type declaration for "a" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at RTLDesign.sv(52): see declaration for object "a"
+Warning (10227): Verilog HDL Port Declaration warning at RTLDesign.sv(55): data type declaration for "b" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at RTLDesign.sv(52): see declaration for object "b"
+Info (12127): Elaborating entity "RTLDesign" for the top level hierarchy
+Info (12128): Elaborating entity "register_10" for hierarchy "register_10:count_reg"
+Info (12128): Elaborating entity "adder" for hierarchy "adder:adder"
+Info (12128): Elaborating entity "register_8" for hierarchy "register_8:value"
+Info (12128): Elaborating entity "comparator" for hierarchy "comparator:compmax"
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "addr[10]" is missing source, defaulting to GND
+    Warning (12110): Net "addrp[10]" is missing source, defaulting to GND
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: Quartus II 64-Bit Analysis & Elaboration was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 4622 megabytes
+    Info: Processing ended: Tue Mar 12 15:14:55 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+
